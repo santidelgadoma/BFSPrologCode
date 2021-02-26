@@ -6,7 +6,7 @@
 * [¿Cómo uso Prolog?](#¿cómo-uso-prolog?)
 * [¿Qué necesito saber antes de intentar BFS en Prolog?](#¿qué-necesito-saber-antes-de-intentar-bfs-en-prolog?)
 * [¿Cómo funciona el código?](#¿cómo-funciona-el-código?)
-* ¿Qué he aprendido de esto?
+* [¿Qué he aprendido de esto?](#¿qué-he-aprendido-de-esto?)
 
 ## ¿Qué es BFS?
 La busqueda dentro de arboles es una herramienta muy importante. La estructura del árbol sigue una relación de padre con hijos. Por ejemplo, un
