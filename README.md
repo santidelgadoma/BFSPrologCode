@@ -78,7 +78,7 @@ Para iniciar la busqueda se llama el predicado `bfs1([],[],Obj,Sol)` que empieza
 
 Al poner en práctica el código mostrado en este repositorio se puede llegar a aprender como recorrer arboles. La búsqueda BFS solo es un tipo de solución para encontrar objetivos en un árbol, existen de diferentes tipos. Lo interesante de este código es la manera en la que se debe cortar ciertas acciones con un salto. El salto se utiliza para que el programa no intenté buscar hijos donde ya no existen. Saber utilizar este tipo de corte te permite obtener mejores soluciones en la recursividad.
 
-![alt text](https://github.com/santidelgadoma/BFSPrologCode/main/Diagrama.pdf)
+![alt text](https://github.com/santidelgadoma/BFSPrologCode/blob/main/Diagrama.pdf)
 
 Prolog incluye una herramienta llamada 'trace' que se encarga de mostrar el paso a paso del programa. Al usar esta herramienta con nuestras soluciones como 
 `trace,(solucionBfs1(jacqueline,Y)`. Esto permite un análisis profundo de cada predicado del código al dirigir el paso que enseña el trace. EL trace te permite comprender las salidas recursivas y el orden que sigue el código.
