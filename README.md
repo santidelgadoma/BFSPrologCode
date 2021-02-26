@@ -22,7 +22,7 @@ Prolog es una herramienta que cuenta con una versión online. La puedes encontra
 2. En la barra superior seleccione 'File' para después picar 'Save'
 3. Llené los parámetros con la información adecuada y usé el botón 'Save program'
 
-Ya que tienes el nombre de tu programa es necesario importar una base de conocimiento. Dentro del repositorio encontrarás la base de conocimiento que usaremos, un documento llamado BDHijos. Al copiar y pegar la información de BDHijos en tu programa le estas dando a Prolog conocimiento. Le estas indicando quien es hijo de quien a través de generaciones (niveles). Ya que Prolog tiene conocimiento debemos usarlo a nuestro favor para realizar la busqueda.
+Ya que tienes el nombre de tu programa es necesario importar una base de conocimiento. Dentro del repositorio encontrarás la base de conocimiento que usaremos, un documento llamado BDHijos. Al copiar y pegar la información de BDHijos en tu programa, en el cuadro de texto de lado derecho, le estas dando a Prolog conocimiento. Le estas indicando quien es hijo de quien a través de generaciones (niveles). Ya que Prolog tiene conocimiento debemos usarlo a nuestro favor para realizar la busqueda.
 
 
 ## ¿Qué necesito saber antes de intentar BFS en Prolog?
@@ -71,17 +71,14 @@ Para iniciar la busqueda se llama el predicado `bfs1([],[],Obj,Sol)` que empieza
 
 * Las variables del predicado `bfs1(C,A,O,S)` estan divididas en dos tipos. 'A' y 'C' son listas auxiliares usadas temporalmente en el código. La variable 'A' se encarga de almacenar la lista ordenada por lo cual solo se usa al buscar. La lista 'C' va guardando todas las hojas que se hayan revisando con el proposito de regresar la lista del camino recorrido. Cuando el objetivo se encuentra se agrega el objetivo al principio de la lista del camino recorrido.
 
+* Por ejemplo si quieres intentar la solución `solucionBfs1(jacqueline,Y)`con el objetivo como `objetivoBfs1(monica)'.
+- `Y=[monica,obama,jacqueline]` Esta sería la lista con el camino recorrido hasta el objetivo (monica). 
 
+## ¿Qué he aprendido de esto?
 
+Al poner en práctica el código mostrado en este repositorio se puede llegar a aprender como recorrer arboles. La búsqueda BFS solo es un tipo de solución para encontrar objetivos en un árbol, existen de diferentes tipos. Lo interesante de este código es la manera en la que se debe cortar ciertas acciones con un salto. El salto se utiliza para que el programa no intenté buscar hijos donde ya no existen. Saber utilizar este tipo de corte te permite obtener mejores soluciones en la recursividad.
 
+!
+Prolog incluye una herramienta llamada 'trace' que se encarga de mostrar el paso a paso del programa. Al usar esta herramienta con nuestras soluciones como 
+`trace,(solucionBfs1(jacqueline,Y)`. Esto permite un análisis profundo de cada predicado del código al dirigir el paso que enseña el trace. EL trace te permite comprender las salidas recursivas y el orden que sigue el código.
 
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
-
-## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
