@@ -13,7 +13,7 @@ La busqueda dentro de arboles es una herramienta muy importante. La estructura d
 padre con tres hijos y cada uno de ellos con dos más. Cada hoja del árbol (hijo o padre) contiene información del tipo que sea. Una busqueda del árbol en BFS
 recorré este árbol de maner horizontal. En otras palabras, una búsqueda por nivel. Para lograr esto tiene que guardar los hijos de cada hoja para poder cambiar de nivel. Este tipo de búsqueda es rápida ya que va por nivel. Sin embargo, al guardar tantos hijos se vuelve un poco pesado para la memoria. Cada búsqueda tiene su intratabilidad pero el BFS es una gran herramienta para arboles medianos o pequeños.
 
-![alt text](https://github.com/santidelgadoma/BFSPrologCode/main/arbolbfs.png)
+! [alt text](https://github.com/santidelgadoma/BFSPrologCode/main/arbolbfs.png)
 
 ## ¿Cómo uso Prolog)
 Prolog es una herramienta que cuenta con una versión online. La puedes encontrar usando el siguiente [hipervínculo](http://swish.swi-prolog.org).
@@ -45,12 +45,12 @@ Las listas son estructuras que guardan y sacan elementos normalmente al descabez
 solucionBfs1(Obj,Sol):- 
     				bfs1([],[],Obj,Sol).`
             
-La primera parte del código se encarga de definir el objetivo, en este caso 'harry'. Para llamar a la busqueda se implementa `SolucionBfs1(Obj,Sol)`. Recibe el valor con el que va a empezar la busqueda `Obj` y `Sol` la variable de retorno. Cuando se encuentré el objetivo `Sol` regresara una lista con el camino recorrido.
+* La primera parte del código se encarga de definir el objetivo, en este caso 'harry'. Para llamar a la busqueda se implementa `SolucionBfs1(Obj,Sol)`. Recibe el valor con el que va a empezar la busqueda `Obj` y `Sol` la variable de retorno. Cuando se encuentré el objetivo `Sol` regresara una lista con el camino recorrido.
 Para iniciar la busqueda se llama el predicado `bfs1([],[],Obj,Sol)` que empieza con dos listas vacías y el valor de inicio.
 
 `bfs1(C,A,O,[O|C]):- objetivoBfs1(O).`
 
- El predicado `bfs1(C,A,O,[O|C])` se encarga de identificar al objetivo checando con su base de conocimeinto `ObjetivoBfs1(O)`. La variable 'O' entrega el objetivo actual, y si no es el objetivo (la ruta) vuelve a intentar. Ya que encuentra otro camino para recorrer intenta solucionarlo con ese predicado de mismo nombre. La variable escrita `[O|C]`se activa si el objetivo ha sido encontrado. Por lo que, al lograr el objetivo la solución es una lista que encabeza el objetivo y su cola es el camino recorrido. 
+* El predicado `bfs1(C,A,O,[O|C])` se encarga de identificar al objetivo checando con su base de conocimeinto `ObjetivoBfs1(O)`. La variable 'O' entrega el objetivo actual, y si no es el objetivo (la ruta) vuelve a intentar. Ya que encuentra otro camino para recorrer intenta solucionarlo con ese predicado de mismo nombre. La variable escrita `[O|C]`se activa si el objetivo ha sido encontrado. Por lo que, al lograr el objetivo la solución es una lista que encabeza el objetivo y su cola es el camino recorrido. 
  
 `bfs1(C,A,O,S):-
     			insertar(O,C,C1),
@@ -63,13 +63,13 @@ Para iniciar la busqueda se llama el predicado `bfs1([],[],Obj,Sol)` que empieza
           descabezar(A,L4),
 				  bfs1(C1,L4,Y,S)).`
           
- El predicado `bfs1(C,A,O,S)` es el encargado de realizar el recorrido. Cada vez que el objetivo no es encontrado el programa tiene que checar el siguiente. Como es una búsqueda BFS el siguiente en checarse depende de la posición. La primer operación es `insertar(O,C,C1)` que se encarga de agregar al valor que no fue el objetivo en una lista. Guardar esta información es importante porque es el camino que realiza el código. En la siguiente llamada `bagof(Hijos,hijo(Hijos,O),L1)` se agregan todos los hijos de la hoja que acabamos de checar en la lista L1. Cada que una hoja es checada tiene que guardar sus hijos. Esto se debe a que esta lista se usa como el orden de chequeo. La lista que dicta las hojas que se revisan se forma con `concat(A,L1,L2),` esta conformada por 'A', los hijos aún no revisados. Los valores L1 y L2 corresponden a los hijos recien agregados 'L1' y la unión de esas listas 'L2'. La lista L2 va formando la fila ordenada de hojas por revisar.
+* El predicado `bfs1(C,A,O,S)` es el encargado de realizar el recorrido. Cada vez que el objetivo no es encontrado el programa tiene que checar el siguiente. Como es una búsqueda BFS el siguiente en checarse depende de la posición. La primer operación es `insertar(O,C,C1)` que se encarga de agregar al valor que no fue el objetivo en una lista. Guardar esta información es importante porque es el camino que realiza el código. En la siguiente llamada `bagof(Hijos,hijo(Hijos,O),L1)` se agregan todos los hijos de la hoja que acabamos de checar en la lista L1. Cada que una hoja es checada tiene que guardar sus hijos. Esto se debe a que esta lista se usa como el orden de chequeo. La lista que dicta las hojas que se revisan se forma con `concat(A,L1,L2),` esta conformada por 'A', los hijos aún no revisados. Los valores L1 y L2 corresponden a los hijos recien agregados 'L1' y la unión de esas listas 'L2'. La lista L2 va formando la fila ordenada de hojas por revisar.
  
- Si la hoja que no contenía el objetivo tiene una cantidad de hijos nula se realiza un salto. Por un salto me refiero a ignorar parte del código. El indicador `!`después de `bagof()`se encarga de realizar el salto. El salto termina en `;` y el programa realiza las operaciones de `cabeza()`y `decabezar()`. La razón por la cual se necesita el salto es porque el programa ya llegó a la última hoja de ese recorrido. Por lo qué no agrega más hijos a la lista con la fila ordenada (L2). Solo vuelve a llamar a la busqueda con la siguiente hoja de la lista ordenada.
+* Si la hoja que no contenía el objetivo tiene una cantidad de hijos nula se realiza un salto. Por un salto me refiero a ignorar parte del código. El indicador `!`después de `bagof()`se encarga de realizar el salto. El salto termina en `;` y el programa realiza las operaciones de `cabeza()`y `decabezar()`. La razón por la cual se necesita el salto es porque el programa ya llegó a la última hoja de ese recorrido. Por lo qué no agrega más hijos a la lista con la fila ordenada (L2). Solo vuelve a llamar a la busqueda con la siguiente hoja de la lista ordenada.
  
-Ya sea que tenga hijos o no la hoja que acabamos de revisar siempre tenemos que revisar la siguiente en orden. Para que no se repita el objeto en la busqueda el predicado `descabezar(L2,L3).`se encarga de borrar el elemento ya revisado. 
+* Ya sea que tenga hijos o no la hoja que acabamos de revisar siempre tenemos que revisar la siguiente en orden. Para que no se repita el objeto en la busqueda el predicado `descabezar(L2,L3).`se encarga de borrar el elemento ya revisado. 
 
-Las variables del predicado `bfs1(C,A,O,S)` estan divididas en dos tipos. 'A' y 'C' son listas auxiliares usadas temporalmente en el código. La variable 'A' se encarga de almacenar la lista ordenada por lo cual solo se usa al buscar. La lista 'C' va guardando todas las hojas que se hayan revisando con el proposito de regresar la lista del camino recorrido. Cuando el objetivo se encuentra se agrega el objetivo al principio de la lista del camino recorrido.
+* Las variables del predicado `bfs1(C,A,O,S)` estan divididas en dos tipos. 'A' y 'C' son listas auxiliares usadas temporalmente en el código. La variable 'A' se encarga de almacenar la lista ordenada por lo cual solo se usa al buscar. La lista 'C' va guardando todas las hojas que se hayan revisando con el proposito de regresar la lista del camino recorrido. Cuando el objetivo se encuentra se agrega el objetivo al principio de la lista del camino recorrido.
 
 
 
