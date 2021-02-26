@@ -13,7 +13,7 @@ La busqueda dentro de arboles es una herramienta muy importante. La estructura d
 padre con tres hijos y cada uno de ellos con dos más. Cada hoja del árbol (hijo o padre) contiene información del tipo que sea. Una busqueda del árbol en BFS
 recorré este árbol de maner horizontal. En otras palabras, una búsqueda por nivel. Para lograr esto tiene que guardar los hijos de cada hoja para poder cambiar de nivel. Este tipo de búsqueda es rápida ya que va por nivel. Sin embargo, al guardar tantos hijos se vuelve un poco pesado para la memoria. Cada búsqueda tiene su intratabilidad pero el BFS es una gran herramienta para arboles medianos o pequeños.
 
-![Ejemplo BFS](./imagenes/ArbolBFS.png)
+![alt text](https://github.com/santidelgadoma/BFSPrologCode/imagenes/ArbolBFS.png)
 
 ## ¿Cómo uso Prolog)
 Prolog es una herramienta que cuenta con una versión online. La puedes encontrar usando el siguiente [hipervínculo](http://swish.swi-prolog.org).
