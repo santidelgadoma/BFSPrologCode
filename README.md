@@ -1,5 +1,5 @@
 # Código BFS en Prolog
-> Este programa hace un recorrido de arboles de la manera Breadth-First-Search. Prolog es un lenguaje lógico que trabaja como un árbol. Implementar códigos para realizar la búsqueda BFS es posible con Prolog. De hecho, este lenguaje ayuda a entender el funcionamiento de el árbol como estructura. 
+> Este programa hace un recorrido de arboles de la manera Breadth-First-Search (BFS). Prolog es un lenguaje lógico que trabaja como un árbol. Implementar códigos para realizar la búsqueda BFS es posible con Prolog. De hecho, este lenguaje ayuda a entender el funcionamiento de el árbol como estructura. 
 
 ## Tabla de Contenido
 * [¿Qué es BFS?](#¿qué-es-bfs?)
